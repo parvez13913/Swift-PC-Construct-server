@@ -6,7 +6,7 @@ export type IProcessor = {
   image: string;
   price: string;
   status: 'In Stock' | 'Out of stock';
-  rating: string;
+  rating?: string;
 };
 
 export type ProcessorModel = Model<IProcessor, Record<string, unknown>>;
