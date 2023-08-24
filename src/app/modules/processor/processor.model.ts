@@ -4,7 +4,7 @@ import { status } from '../../../constants/status';
 
 const processorSchema = new Schema<IProcessor, ProcessorModel>(
   {
-    processor: {
+    productName: {
       type: String,
       required: true,
     },

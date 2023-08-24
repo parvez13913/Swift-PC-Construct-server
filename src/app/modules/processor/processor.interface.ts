@@ -1,7 +1,7 @@
 import { Model } from 'mongoose';
 
 export type IProcessor = {
-  processor: string;
+  productName: string;
   category: string;
   image: string;
   price: string;
