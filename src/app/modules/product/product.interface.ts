@@ -1,6 +1,6 @@
 import { Model } from 'mongoose';
 
-export type IProcessor = {
+export type IProduct = {
   productName: string;
   category: string;
   image: string;
@@ -9,4 +9,4 @@ export type IProcessor = {
   rating?: string;
 };
 
-export type ProcessorModel = Model<IProcessor, Record<string, unknown>>;
+export type ProductModel = Model<IProduct, Record<string, unknown>>;

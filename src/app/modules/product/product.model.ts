@@ -1,8 +1,8 @@
 import { Schema, model } from 'mongoose';
-import { IProcessor, ProcessorModel } from './processor.interface';
+import { IProduct, ProductModel } from './product.interface';
 import { status } from '../../../constants/status';
 
-const processorSchema = new Schema<IProcessor, ProcessorModel>(
+const productSchema = new Schema<IProduct, ProductModel>(
   {
     productName: {
       type: String,
@@ -37,7 +37,4 @@ const processorSchema = new Schema<IProcessor, ProcessorModel>(
   },
 );
 
-export const Processor = model<IProcessor, ProcessorModel>(
-  'Processor',
-  processorSchema,
-);
+export const Product = model<IProduct, ProductModel>('Product', productSchema);
