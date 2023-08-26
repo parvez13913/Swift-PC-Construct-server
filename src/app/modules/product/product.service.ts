@@ -12,7 +12,14 @@ const getAllProduct = async (): Promise<IProduct[]> => {
   return result;
 };
 
+const getSingleProduct = async (id: string): Promise<IProduct | null> => {
+  const result = await Product.findOne({ _id: id });
+
+  return result;
+};
+
 export const ProductService = {
   createProduct,
   getAllProduct,
+  getSingleProduct,
 };
