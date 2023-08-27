@@ -18,8 +18,15 @@ const getSingleProduct = async (id: string): Promise<IProduct | null> => {
   return result;
 };
 
+const getRandomProducts = async (count: number): Promise<IProduct[] | null> => {
+  const result = await Product.aggregate([{ $sample: { size: count } }]);
+
+  return result;
+};
+
 export const ProductService = {
   createProduct,
   getAllProduct,
   getSingleProduct,
+  getRandomProducts,
 };

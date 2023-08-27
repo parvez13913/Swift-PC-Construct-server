@@ -40,8 +40,19 @@ const getSingleProduct = catchAsync(async (req: Request, res: Response) => {
   });
 });
 
+const getRandomProducts = catchAsync(async (req: Request, res: Response) => {
+  const result = await ProductService.getRandomProducts(6);
+  sendResponse<IProduct[]>(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'Product retrieved Successfully !!',
+    data: result,
+  });
+});
+
 export const ProductController = {
   createProduct,
   getAllProduct,
   getSingleProduct,
+  getRandomProducts,
 };

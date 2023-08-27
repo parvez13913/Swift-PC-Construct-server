@@ -1,8 +1,15 @@
 import { Schema, model } from 'mongoose';
 import { IProduct, ProductModel } from './product.interface';
 
+const keyFeaturesSchema = new Schema({
+  model: String,
+  brand: String,
+  type: String,
+});
+
 const productSchema = new Schema<IProduct, ProductModel>(
   {
+    productName: String,
     image: String,
     name: String,
     category: String,
@@ -13,7 +20,7 @@ const productSchema = new Schema<IProduct, ProductModel>(
     },
     price: Number,
     description: String,
-    keyFeatures: [String],
+    keyFeatures: [keyFeaturesSchema],
     individualRating: Number,
     averageRating: Number,
     reviews: [String],
